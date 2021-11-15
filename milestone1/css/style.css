@@ -27,7 +27,7 @@ p, a{
 .contenitore{
     height: 95%;
     width: 80%;
-    min-width: 700px;
+    min-width: 900px;
     background-color: pink;
 }
 
@@ -35,7 +35,8 @@ p, a{
     float: left;
     height: 100%;
     width: 35%;
-    background-color:#FAFAF9 ;
+    background-color:#FAFAF9;
+    overflow: hidden;
 }
 
 .colonna-destra{
@@ -81,7 +82,9 @@ p, a{
 
 .lista-contatti{
     width: 97%;
+    height: 65%;
     border-right: 1px solid #C5CCCC;
+    overflow: scroll;
 }
 
 .contatto{
