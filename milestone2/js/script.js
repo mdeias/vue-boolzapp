@@ -149,11 +149,16 @@ const app = new Vue({
                 ]
             }
               
-        ]
+        ],
+
+        activeMsg: 0
 
     },
 
     methods:{
-        
+        mostraMsg(index){
+            console.log('indice chat', index);
+            this.activeMsg = index;
+        },
     }
 })
