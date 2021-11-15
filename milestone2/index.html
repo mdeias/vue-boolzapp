@@ -76,9 +76,9 @@
                         </div>
                     </div>
                     <div class="chat clearfix">
-                        <div v-for="(messaggio, index) in contatti[activeMsg].messaggi" class="verde">
+                        <div v-for="(messaggio, index) in contatti[activeMsg].messaggi" :class="{ bianco: messaggio.stato === 'recevied', verde: messaggio.stato === 'sent' }">
                             <p>{{messaggio.testo}}</p>
-                            <span>10/2/2021 9:32:44</span>
+                            <span>{{messaggio.data}}</span>
                         </div>
                         
                     </div>

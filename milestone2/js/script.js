@@ -17,7 +17,7 @@ const app = new Vue({
                     {
                         data: '10/05/2021 12:45:34',
                         testo: 'Da quanto tempo! tutto bene tu?',
-                        stato: 'sent'
+                        stato: 'recevied'
                     },
                     {
                         data: '10/05/2021 12:45:34',
@@ -34,7 +34,7 @@ const app = new Vue({
                     {
                         data: '10/05/2021 12:45:34',
                         testo: 'Hai portato a spasso il cane?',
-                        stato: 'sent'
+                        stato: 'recevied'
                     },
                     {
                         data: '10/05/2021 12:45:34',
@@ -43,8 +43,8 @@ const app = new Vue({
                     },
                     {
                         data: '10/05/2021 12:45:34',
-                        testo: 'Nessun problema, vado tra una decina di minuti, buon lavoro!',
-                        stato: 'sent'
+                        testo: 'Nessun problema, vado tra una decina di minuti.!',
+                        stato: 'recevied'
                     }
                 ]
             },
@@ -60,8 +60,8 @@ const app = new Vue({
                     },
                     {
                         data: '10/05/2021 12:45:34',
-                        testo: 'HBene, siamo agli sgoccioli!',
-                        stato: 'sent'
+                        testo: 'Bene, siamo agli sgoccioli!',
+                        stato: 'recevied'
                     },
                     {
                         data: '10/05/2021 12:45:34',
@@ -83,7 +83,7 @@ const app = new Vue({
                     {
                         data: '10/05/2021 12:45:34',
                         testo: 'Ho già provveduto, ci vediamo per cena.',
-                        stato: 'sent'
+                        stato: 'recevied'
                     }
                 ]
             },
@@ -100,7 +100,7 @@ const app = new Vue({
                     {
                         data: '10/05/2021 12:45:34',
                         testo: 'Grazie mille!',
-                        stato: 'sent'
+                        stato: 'recevied'
                     }
                 ]
             },
@@ -112,7 +112,7 @@ const app = new Vue({
                     {
                         data: '10/05/2021 12:45:34',
                         testo: 'Aperitivo alle 19?',
-                        stato: 'sent'
+                        stato: 'recevied'
                     },
                     {
                         data: '10/05/2021 12:45:34',
@@ -122,7 +122,7 @@ const app = new Vue({
                     {
                         data: '10/05/2021 12:45:34',
                         testo: 'Certamente!',
-                        stato: 'sent'
+                        stato: 'recevied'
                     }
                 ]
             },
@@ -139,7 +139,7 @@ const app = new Vue({
                     {
                         data: '10/05/2021 12:45:34',
                         testo: 'La ringrazio, appena possibile darò uno sguardo, buona serata!',
-                        stato: 'sent'
+                        stato: 'recevied'
                     },
                     {
                         data: '10/05/2021 12:45:34',

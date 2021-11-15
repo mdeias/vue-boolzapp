@@ -169,7 +169,7 @@ p, a{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35px;
+    height: 40px;
     border-radius: 10px;
 }
 
@@ -188,7 +188,7 @@ p, a{
 .chat span{
     position: absolute;
     right: 5px;
-    bottom: 5px;
+    bottom: 1px;
     font-size: 8px;
     color: #BECFBA;
 }
