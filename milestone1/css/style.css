@@ -4,6 +4,11 @@
     margin: 0;
 }
 
+p, a{
+    font-size: 11px;
+    margin-top: 3px;
+}
+
 .clearfix::after{
     content: '';
     display: table;
@@ -41,9 +46,55 @@
 }
 
 .profilo-utente, .destinatario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 70px;
     width: 100%;
     background-color: #E9EAEB;
+}
+
+.cerchio{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.cerchio img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.sinistra, .destra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.destinatario i, .profilo-utente i{
+    margin-right: 15px;
+    font-size: 20px;
+    color: #B1B1B1;
+}
+
+.lista-contatti{
+    width: 97%;
+    border-right: 1px solid #C5CCCC;
+}
+
+.contatto{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+}
+
+.contatto .destra p{
+    margin-right: 10px;
+    margin-bottom: 40px;
 }
 
 .destinatario{
@@ -51,9 +102,22 @@
 }
 
 .notifiche{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     height: 75px;
     width: 100%;
     background-color: #8EDAFC;
+}
+
+.notifiche .cerchio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notifiche i{
+    color: #8EDAFC;
 }
 
 .ricerca{
@@ -67,8 +131,9 @@
     border: 1px solid #F5F5F5;
 }
 
-.fa-search{
+.ricerca .fa-search{
     color: #B3B7B9;
+    font-size: 13px; 
 }
 
 .ricerca input{
@@ -94,9 +159,9 @@
     background-color:#F2EDE8;
 }
 
-.fa-smile, .fa-microphone{
+.fa-smile, .fa-microphone {
     font-size: 20px;
-    margin: 0px 30px;
+    margin: 0px 25px;
     color: #545F65;
 }
 
