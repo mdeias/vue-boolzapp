@@ -30,7 +30,7 @@
     float: left;
     height: 100%;
     width: 35%;
-    background-color:darkorange ;
+    background-color:#FAFAF9 ;
 }
 
 .colonna-destra{
@@ -43,51 +43,70 @@
 .profilo-utente, .destinatario{
     height: 70px;
     width: 100%;
-    background-color: blue;
+    background-color: #E9EAEB;
 }
 
 .destinatario{
-    background-color:darkolivegreen;
-    border-left: 1px solid black;
+    border-left: 1px solid #DBDCDC;
 }
 
 .notifiche{
     height: 75px;
     width: 100%;
-    background-color: beige;
+    background-color: #8EDAFC;
 }
 
 .ricerca{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 40px;
-    background-color:darkturquoise;
-    margin-top: 5px;
+    height: 32px;
+    width: 97%;
+    background-color:white;
+    margin: 5px auto;
+    border: 1px solid #F5F5F5;
+}
+
+.fa-search{
+    color: #B3B7B9;
 }
 
 .ricerca input{
     width: 85%;
+    margin-left: 20px;
     height: 80%;
+    color: #B3B7B9;
+    border: none;
 }
 
 .chat{
     width: 100%;
     height: calc(100% - 140px);
-    background-color: dimgray;
+    background-image: url('../img/mine.jpg');
 }
 
 .messaggio{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 70px;
-    background-color:gold;
+    background-color:#F2EDE8;
+}
+
+.fa-smile, .fa-microphone{
+    font-size: 20px;
+    margin: 0px 30px;
+    color: #545F65;
 }
 
 .messaggio input{
     width: 80%;
-    height: 80%;
-    background-color: beige;
+    height: 65%;
+    color: #C2C3C4;
+    background-color: white;
+    padding-left: 20px;
+    border: none;
+    border-radius: 5px;
 }
+
