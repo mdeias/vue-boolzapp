@@ -148,6 +148,39 @@ p, a{
     width: 100%;
     height: calc(100% - 140px);
     background-image: url('../img/mine.jpg');
+    padding: 40px 70px;
+}
+
+.chat div{
+    max-width: 300px;
+    min-width: 200px;
+    position: relative;
+    margin-top: 10px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    border-radius: 15px;
+}
+
+.verde{
+    float: right;
+    background-color: #D6FBBB; 
+}
+
+
+.bianco{
+    float: left;  
+    margin-right: 100%;
+    background-color: #fff;
+}
+
+.chat span{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 8px;
 }
 
 .messaggio{

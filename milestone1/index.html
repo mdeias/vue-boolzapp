@@ -42,13 +42,13 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="lista-contatti">
-                        <div class="contatto">
+                        <div v-for="(contatto, index) in contatti" class="contatto">
                             <div class="sinistra">
                                 <div class="cerchio">
-                                    <img src="img/avatar_1.jpg" alt="">
+                                    <img :src="contatto.avatar" alt="">
                                 </div>
                                 <div>
-                                    <h4>Michele</h4>
+                                    <h4>{{contatto.nome}}</h4>
                                     <p>Lorem ipsum dolor sit.</p>
                                 </div>
                             </div>
@@ -75,7 +75,16 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
-                    <div class="chat"></div>
+                    <div class="chat clearfix">
+                        <div class="verde">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <span>10/2/2021 9:32:44</span>
+                        </div>
+                        <div class="bianco">
+                            <p>Lorem ipsum dolor sit amet consectetur.</p>
+                            <span>10/2/2021 10:54:22</span>
+                        </div>
+                    </div>
                     <div class="messaggio">
                         <i class="far fa-smile"></i>
                         <input type="text" placeholder="Scrivi un messaggio">
