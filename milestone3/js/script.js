@@ -173,7 +173,22 @@ const app = new Vue({
 
             this.contatti[this.activeMsg].messaggi.push(newMsg);
             this.msgUtente ='';
+
+            const autoMsg = {
+                data:'10/05/2021 12:45:34',
+                testo: 'Ok',
+                stato: 'recevied' 
+            }
+
+            setTimeout(() => {
+                this.contatti[this.activeMsg].messaggi.push(autoMsg);
+            }, 2000);
+
+           
         }
+
+        },
+
         
-    }
+    
 })
