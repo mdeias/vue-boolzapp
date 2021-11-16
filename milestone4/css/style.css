@@ -142,6 +142,7 @@ p, a{
     background-color:white;
     margin: 5px auto;
     border: 1px solid #F5F5F5;
+    border-left: none;
 }
 
 .ricerca .fa-search{

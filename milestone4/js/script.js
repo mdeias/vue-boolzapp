@@ -188,7 +188,20 @@ const app = new Vue({
 
         },
 
-        },
+        filtraContatti(){
+
+            for (const nomi in this.contatti) {
+            
+            if (this.contatti[nomi].nome.includes(this.ricercaUtente)) {
+                this.contatti[nomi].visibile = true;
+             }else{         
+                this.contatti[nomi].visibile = false;
+             }
+            }
+                
+        }
+
+    },
 
         
     

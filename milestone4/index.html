@@ -39,11 +39,16 @@
                     </div>
                     <div class="ricerca">
                         <i class="fas fa-search"></i>
-                        <input v-model="ricercaUtente" type="text" 
+                        <input 
+                        @keyup="filtraContatti()"
+                        v-model="ricercaUtente" 
+                        type="text" 
                         placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="lista-contatti">
-                        <div @click="mostraMsg(index)" v-for="(contatto, index) in contatti" class="contatto" :class="{attivo: index === activeMsg}">
+                        <div @click="mostraMsg(index)" v-for="(contatto, index) in contatti"
+                        v-if="contatto.visibile"
+                        class="contatto" :class="{attivo: index === activeMsg}">
                             <div class="sinistra">
                                 <div class="cerchio">
                                     <img :src="contatto.avatar" alt="">
