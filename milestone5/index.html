@@ -46,7 +46,7 @@
                         placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="lista-contatti">
-                        <div @click="mostraMsg(index)" v-for="(contatto, index) in contatti"
+                        <div @click="mostraUtente(index)" v-for="(contatto, index) in contatti"
                         v-if="contatto.visibile"
                         class="contatto" :class="{attivo: index === activeUtente}">
                             <div class="sinistra">
@@ -55,7 +55,7 @@
                                 </div>
                                 <div>
                                     <h4>{{contatto.nome}}</h4>
-                                    <p>Lorem ipsum dolor sit.</p>
+                                    <p> {{ultimoMsg(index)}} </p>
                                 </div>
                             </div>
                             <div class="destra">
@@ -85,7 +85,18 @@
                         <div v-for="(messaggio, index) in contatti[activeUtente].messaggi" :class="{ bianco: messaggio.stato === 'recevied', verde: messaggio.stato === 'sent' }">
                             <p>{{messaggio.testo}}</p>
                             <span>{{messaggio.data}}</span>
-                            
+                            <i  class="fas fa-chevron-down"></i>
+                            <select name="menu-messaggio" class="opzioni-msg">
+                                <option>
+                                    Opzioni
+                                </option>
+                                <option>
+                                    Info messaggio
+                                </option>
+                                <option>
+                                    Elimina messaggio
+                                </option>
+                            </select>
                         </div>
                         
                     </div>

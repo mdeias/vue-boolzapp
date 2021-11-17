@@ -160,7 +160,7 @@ const app = new Vue({
     },
 
     methods:{
-        mostraMsg(index){
+        mostraUtente(index){
             console.log('indice chat', index);
             this.activeUtente = index;
         },
@@ -199,6 +199,14 @@ const app = new Vue({
              }
             }
                 
+        },
+
+        ultimoMsg(index){
+            let lastMsg = this.contatti[index].messaggi[this.contatti[index].messaggi.length - 1].testo;
+            if (lastMsg.length > 30) {
+                lastMsg = lastMsg.substr(0, 30)+"...";
+            }
+            return lastMsg;
         }
 
     },
