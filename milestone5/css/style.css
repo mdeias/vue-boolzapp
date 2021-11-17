@@ -175,6 +175,7 @@ p, a{
     min-width: 200px;
     position: relative;
     margin-top: 10px;
+    margin-bottom: 20px;
     padding: 25px 35px 25px 15px;
     display: flex;
     justify-content: flex-start;
@@ -219,11 +220,6 @@ p, a{
     border-radius: 3px;
     font-size: 10px;
     padding: 3px;
-    display: none;
-}
-
-.attiva-menu{
-    display: inline-block;
 }
 
 .chat span{

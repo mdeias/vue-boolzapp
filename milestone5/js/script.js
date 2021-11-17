@@ -155,7 +155,9 @@ const app = new Vue({
 
         msgUtente: '',
 
-        ricercaUtente: ''
+        ricercaUtente: '',
+
+        mostraMenu: false
 
     },
 
@@ -207,8 +209,20 @@ const app = new Vue({
                 lastMsg = lastMsg.substr(0, 30)+"...";
             }
             return lastMsg;
-        }
+        },
 
+        attivaMenu(index){
+
+           let selectMsg = this.contatti[this.activeUtente].messaggi[index];
+
+           console.log('messaggio selezionato', selectMsg);
+                       
+           console.log('MostraMenu prima', this.mostraMenu);
+           this.mostraMenu = true;
+           console.log('MostraMenu dopo', this.mostraMenu);
+
+           return selectMsg;
+        }
     },
 
         

@@ -72,7 +72,7 @@
                             </div>
                             <div class="accesso">
                                 <h5>{{contatti[activeUtente].nome}}</h5>
-                                <p>Ultimo accesso oggi alle 16:24</p>
+                                <p>Ultimo accesso oggi alle </p>
                             </div>
                         </div>
                         <div class="destra">
@@ -82,11 +82,16 @@
                         </div>
                     </div>
                     <div class="chat clearfix">
-                        <div v-for="(messaggio, index) in contatti[activeUtente].messaggi" :class="{ bianco: messaggio.stato === 'recevied', verde: messaggio.stato === 'sent' }">
+                        <div v-for="(messaggio, index) in contatti[activeUtente].messaggi"
+                        :class="{ bianco: messaggio.stato === 'recevied', verde: messaggio.stato === 'sent' }">
                             <p>{{messaggio.testo}}</p>
                             <span>{{messaggio.data}}</span>
-                            <i  class="fas fa-chevron-down"></i>
-                            <select name="menu-messaggio" class="opzioni-msg">
+                            <i  
+                            @click="attivaMenu(index)"
+                            class="fas fa-chevron-down"></i>
+                            <select
+                            v-if="mostraMenu === true"
+                            name="menu-messaggio" class="opzioni-msg">
                                 <option>
                                     Opzioni
                                 </option>
