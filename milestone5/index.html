@@ -77,7 +77,7 @@
                             </div>
 
                             <div class="destra">
-                                <p>10/5/2021 16:56</p>
+                                <p>{{ultimaData(index)}}</p>
                             </div>
 
                         </div>
@@ -97,7 +97,7 @@
 
                             <div class="accesso">
                                 <h5>{{contatti[activeUtente].nome}}</h5>
-                                <p>Ultimo accesso oggi alle </p>
+                                <p>Ultimo accesso oggi alle {{ora}}</p>
                             </div>
 
                         </div>
@@ -153,8 +153,16 @@
             </div>
         </div>
     </div>
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js">
+    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- day js core -->
+    <script 
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js">
+    </script>
+
+    <!-- file -->
     <script src="js/script.js"></script>
 
 </body>

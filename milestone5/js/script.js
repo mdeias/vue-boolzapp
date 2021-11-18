@@ -10,17 +10,17 @@ const app = new Vue({
                 visibile: true,
                 messaggi: [
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 12:45',
                         testo: 'Ciao Miche, come vanno le cose?',
                         stato: 'sent'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 12:48',
                         testo: 'Da quanto tempo! tutto bene tu?',
                         stato: 'recevied'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 12:55',
                         testo: 'Anche io non mi lamento, hai programmi per questo sabato?',
                         stato: 'sent'
                     }
@@ -32,17 +32,17 @@ const app = new Vue({
                 visibile: true,
                 messaggi: [
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 10:05',
                         testo: 'Hai portato a spasso il cane?',
                         stato: 'recevied'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 10:45',
                         testo: 'Io oggi non posso occuparmene, sono a lavoro fino a tardi',
                         stato: 'sent'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 11:15',
                         testo: 'Nessun problema, vado tra una decina di minuti.!',
                         stato: 'recevied'
                     }
@@ -54,17 +54,17 @@ const app = new Vue({
                 visibile: true,
                 messaggi: [
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 15:45',
                         testo: 'Ciao Stefano, come sta andando il progetto?',
                         stato: 'sent'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 15:57',
                         testo: 'Bene, siamo agli sgoccioli!',
                         stato: 'recevied'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 16:22',
                         testo: 'Non sto più nella pelle!',
                         stato: 'sent'
                     }
@@ -76,12 +76,12 @@ const app = new Vue({
                 visibile: true,
                 messaggi: [
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 18:05',
                         testo: 'Ricordati di comprare il latte per la colazione',
                         stato: 'sent'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 19:45',
                         testo: 'Ho già provveduto, ci vediamo per cena.',
                         stato: 'recevied'
                     }
@@ -93,12 +93,12 @@ const app = new Vue({
                 visibile: true,
                 messaggi: [
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 10:35',
                         testo: 'Ciao Fabio, buon compleanno!',
                         stato: 'sent'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 11:42',
                         testo: 'Grazie mille!',
                         stato: 'recevied'
                     }
@@ -110,17 +110,17 @@ const app = new Vue({
                 visibile: true,
                 messaggi: [
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 12:45',
                         testo: 'Aperitivo alle 19?',
                         stato: 'recevied'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 12:49',
                         testo: 'Assolutamente si, ci vediamo nel solito posto?',
                         stato: 'sent'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 12:58',
                         testo: 'Certamente!',
                         stato: 'recevied'
                     }
@@ -132,17 +132,17 @@ const app = new Vue({
                 visibile: true,
                 messaggi: [
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 19:35',
                         testo: 'Buonasera, le ho inviato via mail il preventivo del trilocale',
                         stato: 'sent'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 19:45',
                         testo: 'La ringrazio, appena possibile darò uno sguardo, buona serata!',
                         stato: 'recevied'
                     },
                     {
-                        data: '10/05/2021 12:45:34',
+                        data: '10/05/2021 19:58',
                         testo: 'A presto.',
                         stato: 'sent'
                     }
@@ -157,7 +157,11 @@ const app = new Vue({
 
         ricercaUtente: '',
 
-        activeMsg: -1
+        activeMsg: -1,
+
+        ora: dayjs().format("HH:MM"),
+
+        data: dayjs().format("DD/MM/YYYY")
 
     },
 
@@ -166,12 +170,13 @@ const app = new Vue({
         mostraUtente(index){
             console.log('indice chat', index);
             this.activeUtente = index;
+            this.activeMsg = -1;
         },
         // funzione che pusha il nuovo messaggio nell' oggetto dell'array selezionato e invia una risposta automatica
         pushMsg(){
             const newMsg = {
                     
-                data:'10/05/2021 12:45:34',
+                data: this.data + " " + this.ora,
                 testo: this.msgUtente,
                 stato: 'sent' 
             }
@@ -180,7 +185,7 @@ const app = new Vue({
             this.msgUtente ='';
 
             const autoMsg = {
-                data:'10/05/2021 12:45:34',
+                data: this.data + " " + this.ora,
                 testo: 'Ok',
                 stato: 'recevied' 
             }
@@ -211,6 +216,12 @@ const app = new Vue({
             }
             return lastMsg;
         },
+        //funzione che restituisce la proprietà data dell'ultimo messaggio nell'array messaggi
+        ultimaData(index){
+            let lastDate = this.contatti[index].messaggi[this.contatti[index].messaggi.length - 1].data;
+           
+            return lastDate;
+        },
 
         // funzione che restituisce l'indice dell'array messaggi
         attivaMsg(index){
@@ -221,11 +232,11 @@ const app = new Vue({
         eliminaMsg(index){
 
             let selectMsg = this.contatti[this.activeUtente].messaggi;
-            
-            console.log(selectMsg);
-
-            selectMsg.splice(index, 1)
+        
+            selectMsg.splice(index, 1);
+            this.activeMsg = -1;
         }
+
     },
 
     
