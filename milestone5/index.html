@@ -125,13 +125,11 @@
                             <select
                             v-if="index === activeMsg"
                             name="menu-messaggio" class="opzioni-msg">
-                                <option>
-                                    Opzioni
-                                </option>
+                                
                                 <option>
                                     Info messaggio
                                 </option>
-                                <option>
+                                <option @click ="eliminaMsg(index)">
                                     Elimina messaggio
                                 </option>
                             </select>

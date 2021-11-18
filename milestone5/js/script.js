@@ -195,7 +195,7 @@ const app = new Vue({
 
             for (const nomi in this.contatti) {
             
-            if (this.contatti[nomi].nome.includes(this.ricercaUtente)) {
+            if (this.contatti[nomi.toUpperCase()].nome.includes(this.ricercaUtente.toUpperCase())) {
                 this.contatti[nomi].visibile = true;
              }else{         
                 this.contatti[nomi].visibile = false;
@@ -220,11 +220,11 @@ const app = new Vue({
         // funzione che rimuove il messaggio dall'array
         eliminaMsg(index){
 
-            let selectMsg = this.contatti[this.activeUtente].messaggi[index];
+            let selectMsg = this.contatti[this.activeUtente].messaggi;
             
             console.log(selectMsg);
 
-            selectMsg.splice(index, 1);
+            selectMsg.splice(index, 1)
         }
     },
 
