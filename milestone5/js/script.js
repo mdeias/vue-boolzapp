@@ -212,19 +212,20 @@ const app = new Vue({
             return lastMsg;
         },
 
-        // attivaMenu(index){
-
-        //     let selectMsg = this.contatti[this.activeUtente].messaggi[index];
-
-        //     console.log('messaggio selezionato', selectMsg);
-
-        //     return selectMsg;
-        // },
-        
         // funzione che restituisce l'indice dell'array messaggi
         attivaMsg(index){
             this.activeMsg = index;
-        }   
+        },
+        
+        // funzione che rimuove il messaggio dall'array
+        eliminaMsg(index){
+
+            let selectMsg = this.contatti[this.activeUtente].messaggi[index];
+            
+            console.log(selectMsg);
+
+            selectMsg.splice(index, 1);
+        }
     },
 
     
