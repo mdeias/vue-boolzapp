@@ -157,16 +157,17 @@ const app = new Vue({
 
         ricercaUtente: '',
 
-        mostraMenu: false
+        activeMsg: -1
 
     },
 
     methods:{
+        // funzione che restituisce l'indice dell'array contatti
         mostraUtente(index){
             console.log('indice chat', index);
             this.activeUtente = index;
         },
-
+        // funzione che pusha il nuovo messaggio nell' oggetto dell'array selezionato e invia una risposta automatica
         pushMsg(){
             const newMsg = {
                     
@@ -189,7 +190,7 @@ const app = new Vue({
             }, 2000);
 
         },
-
+        // funzione che filtra i contatti in base all'input dell'utente 
         filtraContatti(){
 
             for (const nomi in this.contatti) {
@@ -202,7 +203,7 @@ const app = new Vue({
             }
                 
         },
-
+        // funzione che restituisce la proprietà testo dell'ultimo messaggio nell'array messaggi e ne limita la lunghezza
         ultimoMsg(index){
             let lastMsg = this.contatti[index].messaggi[this.contatti[index].messaggi.length - 1].testo;
             if (lastMsg.length > 30) {
@@ -211,20 +212,20 @@ const app = new Vue({
             return lastMsg;
         },
 
-        attivaMenu(index){
+        // attivaMenu(index){
 
-           let selectMsg = this.contatti[this.activeUtente].messaggi[index];
+        //     let selectMsg = this.contatti[this.activeUtente].messaggi[index];
 
-           console.log('messaggio selezionato', selectMsg);
-                       
-           console.log('MostraMenu prima', this.mostraMenu);
-           this.mostraMenu = true;
-           console.log('MostraMenu dopo', this.mostraMenu);
+        //     console.log('messaggio selezionato', selectMsg);
 
-           return selectMsg;
-        }
+        //     return selectMsg;
+        // },
+        
+        // funzione che restituisce l'indice dell'array messaggi
+        attivaMsg(index){
+            this.activeMsg = index;
+        }   
     },
 
-        
     
 })

@@ -14,83 +14,116 @@
     <div id="app">
         <div class="background">
             <div class="contenitore clearfix">
+                <!-- colonna sinistra -->
                 <section class="colonna-sinistra">
+                    <!-- profilo utente -->
                     <div class="profilo-utente">
                         <div class="sinistra">
+
                             <div class="cerchio">
                                 <img src="img/avatar_io.jpg" alt="">
                             </div>
                             <h5>Nome Utente</h5>
                         </div>
+
                         <div class="destra">
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt"></i>
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
+
                     </div>
+                    <!-- notifiche -->
                     <div class="notifiche">
+
                         <div class="cerchio">
                             <i class="fas fa-bell-slash"></i>
                         </div>
+
                         <div>
                             <h5>Ricevi notifiche di  nuovi messaggi</h5>
                             <a href="#">Attiva notifiche desktop</a>
                         </div>
+
                     </div>
+                    <!-- input ricerca -->
                     <div class="ricerca">
                         <i class="fas fa-search"></i>
+
                         <input 
                         @keyup="filtraContatti()"
                         v-model="ricercaUtente" 
                         type="text" 
                         placeholder="Cerca o inizia una nuova chat">
                     </div>
+                    <!-- lista dei contatti -->
                     <div class="lista-contatti">
+                        <!-- contatto attivo -->
                         <div @click="mostraUtente(index)" v-for="(contatto, index) in contatti"
                         v-if="contatto.visibile"
                         class="contatto" :class="{attivo: index === activeUtente}">
+
                             <div class="sinistra">
+
                                 <div class="cerchio">
                                     <img :src="contatto.avatar" alt="">
                                 </div>
+
                                 <div>
                                     <h4>{{contatto.nome}}</h4>
                                     <p> {{ultimoMsg(index)}} </p>
                                 </div>
+
                             </div>
+
                             <div class="destra">
                                 <p>10/5/2021 16:56</p>
                             </div>
+
                         </div>
+
                     </div>
                 </section>
+                <!-- colonna destra -->
                 <section class="colonna-destra">
+                    <!-- contatto selezionato -->
                     <div class="destinatario">
+
                         <div class="sinistra">
+
                             <div class="cerchio">
                                 <img :src="contatti[activeUtente].avatar" alt="">
                             </div>
+
                             <div class="accesso">
                                 <h5>{{contatti[activeUtente].nome}}</h5>
                                 <p>Ultimo accesso oggi alle </p>
                             </div>
+
                         </div>
+
                         <div class="destra">
                             <i class="fas fa-search"></i>
                             <i class="fas fa-paperclip"></i>
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
+
                     </div>
+                    <!-- contenitore messaggi -->
                     <div class="chat clearfix">
+                        <!-- div relativo al messaggio -->
                         <div v-for="(messaggio, index) in contatti[activeUtente].messaggi"
                         :class="{ bianco: messaggio.stato === 'recevied', verde: messaggio.stato === 'sent' }">
+
                             <p>{{messaggio.testo}}</p>
                             <span>{{messaggio.data}}</span>
+
                             <i  
-                            @click="attivaMenu(index)"
+                            @click="attivaMsg(index)"
                             class="fas fa-chevron-down"></i>
+                            <!-- menù a scomparsa -->
                             <select
-                            v-if="mostraMenu === true"
+                            v-if="index === activeMsg"
                             name="menu-messaggio" class="opzioni-msg">
                                 <option>
                                     Opzioni
@@ -102,22 +135,29 @@
                                     Elimina messaggio
                                 </option>
                             </select>
+
                         </div>
                         
                     </div>
+                    <!-- nuovo messaggio -->
                     <div class="messaggio">
                         <i class="far fa-smile"></i>
+
                         <input type="text" 
                         v-model="msgUtente"
                         @keyUp.enter= "pushMsg()"
                         placeholder="Scrivi un messaggio">
+
                         <i class="fas fa-microphone"></i>
                     </div>
+
                 </section>
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/script.js"></script>
+
 </body>
 </html>
